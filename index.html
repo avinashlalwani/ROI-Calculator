@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ROI Calculator</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://engage.liveperson.com/roi-calculator/labratrevenge.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header>
+    <img src="https://engage.liveperson.com/roi-calculator/img/lp-logo.png" alt="LivePerson" />
+  </header>
+
+  <div id="hero">
+    <div id="heading">
+      <h1>Digital Transformation  Impact Analysis</h1>
+      <p>Use this calculator to get the most accurate estimation of the savings that messaging can bring your brand. The variable factors in LivePerson’s model can be changed using the fields below, so feel free to enter your organization’s information.</p>
+    </div> 
+
+    <div class="whiteBar"></div>
+      <h3>Core Assumptions</h3>
+
+      <form id="form1">
+        <div>
+          
+          <div class="field" id="numberOfAgents">
+            <label class="field__label" for="Number of Agent">Number of Agents*</label>
+            <input class="field__input one-column-form__input--text" id="noOfAgents" name="field1" placeholder="Number of Agents*" />
+            <p class="hoverTip">Enter the current number of agents employed across your brand’s contact centers</p>
+          </div>
+          
+          <div class="field" id="numberOfCustomers">
+            <label class="field__label">Number of Customers*</label>
+            <input class="field__input one-column-form__input--text" id="noOfCustomers" name="field2" placeholder="Number of Customers*" />
+            <p class="hoverTip">Enter the current number of customers under your brand</p>
+          </div>
+          
+          <div class="field" id="interactionsPerCustomer">
+            <label class="field__label">Interactions / Customer / Year*</label>
+            <input class="field__input one-column-form__input--text" id="interactions" name="field3" placeholder="Interactions / Customer / Year*" />
+            <p class="hoverTip">The average number of interactions with customer service by each customer annually</p>
+          </div>
+        
+        <br>
+        
+          <div class="field" id="annualCompanyRevenue">
+            <label class="field__label">Annual Revenue</label>
+            <input class="field__input one-column-form__input--text" id="annualRevenue" name="field4" placeholder="Annual Revenue" />
+            <p class="hoverTip">Your brand’s vertical</p>
+          </div>
+        
+          <div class="field" id="industry">
+            <label class="field__label">Industry*</label>
+            <select class="field__input one-column-form__input--text industry" name="industry">
+              <option class="industryArea" value="" disabled selected>Industry*</option>
+              <option value="telco">Telco</option>
+              <option value="fiserve">FiServe</option>
+              <option value="travel">Travel</option>
+              <option value="etc">Retail</option>
+            </select>
+          </div>
+        </div>
+      
+        <div class="secondForm">
+          
+          <div class="field" id="costPerEachAgent">
+            <label>Cost Per Each Agent Attrition*</label>
+            <input id="costPerAgent" name="field1" />
+            <p class="hoverTip">The average cost of sourcing, hiring, onboarding and training  a new agent</p>
+          </div>
+        
+          <div class="field" id="annualAgentAttrition">
+            <label>Annual Agent Attrition*</label>
+            <input id="agentAttrition" name="field2" />
+            <p class="hoverTip">The average percentage of agent churn within contact centers annually</p>
+          </div>
+        
+          <div class="field" id="costPerCall">
+            <label>Cost / Call*</label>
+            <input id="costCall" name="field3" />
+            <p class="hoverTip">Enter the current number of agents employed across your brand’s contact centers</p>
+          </div>
+        
+        </div>
+      </form>
+      
+      <button id="button" onclick="outputname()">Calculate</button>
+
+      <p class="finePrint">None of the information entered on this page is collected in any way. It is used solely for the purpose of the calculations herein, and is not stored by any party.</p>
+    </div>
+
+    <div id="d3Graph">
+      <h2>Your Full-Year Benefits Analysis*</h2>
+      <p id="summary"></p>
+      <ul>
+        <li class="blueDot">
+          <span>Expense Savings</span>
+        </li>
+        <li class="orangeDot">
+          <span>Revenue Benefit</span>
+        </li>
+      </ul>
+    
+      <div class="graph">
+        <div id="chart" class="chart-container"></div>
+        <img id="goUp" src="https://engage.liveperson.com/roi-calculator/img/backToTop.svg" />
+      </div>
+
+      <p class="graphMessage">*The variance in conservative, likely, and aggressive projections is based on the prominence at which your company makes messaging available on its various customer touchpoints, as well as the completeness of processes — such as dispute resolution and change of address — it handles over messaging.</p>
+  </div>
+
+  <footer id="footer">
+    <img src="http://www.liveperson.com/sites/all/themes/engage/images/footer_logo_white.png" alt="LP-footerLogo">
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

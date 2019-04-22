@@ -1,0 +1,412 @@
+body {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+header {
+  padding: 1.5em 1.5em; 
+  text-align: left; 
+  line-height: 0;
+}
+header img {
+  max-width: 151px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.whiteBar {
+  width: 36px; 
+  height: 7px; 
+  background-color: white; 
+  margin: 40px auto 35px auto;
+}
+#form1 > div {
+  position: relative;
+}
+#hero {
+  padding: 4em 2em;
+  background-color: #5879DA;
+  color: #fff;
+  margin-bottom: 80px;
+}
+h1, h2, h3 {
+  font-family: 'Roboto Slab', serif;
+  margin-top: 0;
+  font-weight: normal;
+}
+h2 {
+  font-size: 32px;
+  color: #162036;
+}
+p, label {
+    font-family: 'open sans', arial, sans-serif;
+}
+#hero p {
+  opacity:.6;
+}
+#heading {
+  max-width: 770px;
+  margin: 0 auto;
+}
+form input {
+  background-color: #5879DA;
+  border: none;
+  color: #fff;
+  padding-bottom:10px;
+  outline: none;
+  padding-top: 22px;
+  font-size: 16px;
+  width: 100%;
+}
+.field {
+  display:inline-block;
+  position: relative;
+  margin: 0 10px 20px 10px; 
+  width: 25%; 
+  max-width: 350px;
+  //min-width: 300px;
+  border-bottom: 2px solid #fff; 
+}
+.field#annualCompanyRevenue, 
+.field#industry {
+    max-width: 537px;
+    width: 38.5%;
+}
+.field img {
+  display: none;
+}
+.hoverTip {
+  display: none;
+  background-color: #162036;
+  position: absolute;
+  padding: 10px;
+  opacity: 1!important;
+  z-index: 99999;
+  transition: opacity 2s linear;
+}
+.hoverTip:after {   
+  content: '';
+  position: absolute;
+  left: 70.5%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #162036;
+  clear: both;
+}
+.questionMark.show + .hoverTip {
+  display: block;
+}
+#numberOfAgents .hoverTip {
+  top: -120px;
+  right: -40px;
+  width: 200px;
+}
+#numberOfCustomers .hoverTip {
+  top: -98px;
+  right: -40px;
+  width: 200px;
+}
+#interactionsPerCustomer .hoverTip {
+  top: -120px;
+  right: -40px;
+  width: 200px;
+}
+#annualCompanyRevenue .hoverTip {
+  top: -54px;
+  right: -40px;
+  width: 200px;
+}
+#costPerEachAgent .hoverTip {
+  top: -120px;
+  right: -40px;
+  width: 200px;
+}
+#annualAgentAttrition .hoverTip {
+  top: -98px;
+  right: -40px;
+  width: 200px;
+}
+#costPerCall .hoverTip {
+  top: -120px;
+  right: -40px;
+  width: 200px;
+}
+input, label {
+  display:block;
+  text-align: left;
+}
+label {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateY(15%);
+  z-index: 2;
+  transition: transform 0.3s @anim, opacity 0.3s @anim;
+}
+select {
+  border: none;
+  background-color: #5879DA;
+  color: #fff;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  padding-bottom: 10px;
+  padding-top: 22px;
+  font-size: 16px;
+}
+select:after {
+  
+}
+button {
+  background-color: #ff720b;
+  width: 350px;
+  padding: 17px;
+  border:none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+  display: block; 
+  margin: 20px auto;
+}
+button:hover {
+  background-color: #ff8328;
+}
+
+/* FORM STYLES */
+.beforeDollar {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+}
+.afterPercent {
+  position: absolute;
+  bottom: 9px;
+  left: 21px;
+}
+input#costPerAgent,
+input#costCall {
+  padding-left: 10px;
+}
+.field__label {
+  display: block;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  text-align: left;
+  transform: translateY(3px);
+  transition: all .4s ease-out;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 1;
+}
+.field--not-empty .field__label {
+  opacity: .7;
+  transform: none;
+}
+.field.field--not-empty input::-webkit-input-placeholder { 
+  visibility: hidden;
+}
+.field__input {
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.field--not-empty .field__input {
+  padding-top: 22px;
+  padding-bottom: 10px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+  opacity: .7;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #fff;
+    opacity: .7;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #fff;
+    opacity: .7;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #fff;
+    opacity: .7;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+  opacity: .7;
+}
+#summary {
+  color:#162036;
+  font-size: 24px;
+  margin: 40px auto;
+  max-width: 516px;
+  line-height: 34px;
+}
+label {
+  line-height: 17px;
+}
+
+.industry{
+  color: #cdd7f4;
+}
+
+.industryArea {
+  opacity: 0.7;
+}
+.select:after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: yellow;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  pointer-events: none;
+}
+.secondForm {
+  display: none;
+  transition: all .4s ease-out;
+  margin-top: 0px; 
+  position: relative; 
+  width: 100%;
+}
+.secondForm.nextForm {
+  display: inline-block;
+}
+.secondForm label {
+  opacity: 0.7;
+}
+.finePrint{
+  max-width: 630px;
+  margin: 0 auto;
+  font-style: italic;
+  line-height: 24px;
+}   
+.widget {
+    margin: 0 auto;
+    width:350px;
+    margin-top:50px;
+    background-color:#fff;
+    -background-color: #222D3A;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.3);
+}
+.header {
+    background-color: #eee;
+    height:40px;
+    color:#555;
+    text-align: center;
+    line-height: 40px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-shadow: 1px 1px #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+.chart-container {
+    padding:25px;
+    height: 350px;
+}
+.d3-tip {
+  line-height: 1;
+  text-align: left;
+  padding: 12px;
+  background: #162036;
+  color: #fff;
+  border-radius: 4px;
+}
+#d3Graph {
+  padding: 0 2em;
+}
+#d3Graph ul {
+  display: inline-block;
+  padding-left: 30px;
+}
+#d3Graph ul li {
+  float: left;
+}
+.blueDot {
+  margin-right: 50px; 
+  list-style-image: url('https://engage.liveperson.com/roi-calculator/img/blueDot.svg');
+}
+.orangeDot {
+  list-style-image: url('https://engage.liveperson.com/roi-calculator/img/orangeDot.svg');
+}
+.blueDot span, 
+.orangeDot span {
+  color: #535353; 
+  font-family: 'open sans', arial, sans-serif;
+}
+.graph {
+  position:relative; 
+  margin: 0 auto; 
+  max-width: 1000px;
+}
+#goUp {
+  position: absolute; 
+  bottom: 0; 
+  right: 0; 
+  cursor: pointer;
+}
+.graphMessage {
+  max-width: 670px; 
+  margin: 0 auto; 
+  color: #535353; 
+  line-height: 24px;
+}
+footer {
+  height: 111px; 
+  line-height: 111px; 
+  background-color: #162036; 
+  color: #fff; 
+  margin-top: 100px;
+}
+footer img {
+  vertical-align: middle;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.y .tick line {
+  stroke: #D8D8D8;
+}
+.x .tick line {
+  display: none;
+}
+.stack:nth-of-type(2) text {
+  display:none;
+}
+
+@media only screen and (max-width : 640px) {
+  h1 {
+    font-size: 1.75em;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  #summary {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  button {
+    width: 300px;
+  }
+}
